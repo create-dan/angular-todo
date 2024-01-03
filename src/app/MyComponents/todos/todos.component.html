@@ -1,12 +1,28 @@
 <div class="container">
+
+    <!-- title -->
     <h1 class="text-center mb-3">Todo List by CodeWithHarry</h1>
+
+    <!-- add todo component call  -->
     <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+
+    <!-- render all todos  -->
     <h4>Your Todos</h4>
+
+    <!-- if 0 todos  -->
     <div *ngIf="this.todos.length===0; else elseBlock">No Todos to display</div>
+
+    <!-- if greater than 0 todos  -->
+
+    <!-- (todoDelete)="deleteTodo($event)" binds the todoDelete event emitted by the app-todo-item component to the deleteTodo
+    method in the parent component. When the app-todo-item emits the todoDelete event, the deleteTodo method is called with
+    the emitted event data. -->
     <ng-template #elseBlock>
         <div *ngFor="let todo of todos; index as i">
             <app-todo-item [todo]="todo" [i]="i" (todoDelete)="deleteTodo($event)" (todoCheckbox)="toggleTodo($event)">
             </app-todo-item>
         </div>
     </ng-template>
+
+
 </div> 

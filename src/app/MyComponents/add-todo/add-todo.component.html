@@ -1,6 +1,11 @@
 <div class="my-3">
+
+<!-- heading  -->
 <h4>Add a Todo</h4>
+
+<!-- form for adding todo  -->
 <form (ngSubmit)="onSubmit()">
+  
     <div class="form-group">
       <label for="title">Todo Title</label>
       <input type="text" [(ngModel)]="title" class="form-control" id="title" name="title" aria-describedby="emailHelp"> 
